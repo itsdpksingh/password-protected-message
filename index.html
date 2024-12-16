@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password-Protected Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: center;
+        }
+        #message {
+            display: none;
+            margin-top: 20px;
+            color: green;
+            font-weight: bold;
+        }
+        input, button {
+            padding: 10px;
+            margin-top: 10px;
+        }
+        #hint {
+            margin-top: 20px;
+            color: gray;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h2>Password Protected Message</h2>
+    <p>Hi Duggaaa, to ensure that only you can open it, enter your secret name as password:</p>
+    <input type="password" id="passwordInput" placeholder="Enter password">
+    <button onclick="checkPassword()">Submit</button>
+
+    <!-- Password Hint -->
+    <div id="hint">🔐 Hi Dugss, to ensure that only you can open it, enter your secret name as password.</div>
+
+    <div id="message">🎉 Congratulations! This is the hidden message. 🎉</div>
+
+    <script>
+        function checkPassword() {
+            const correctPassword = "atom"; // Set your password here
+            const userInput = document.getElementById("passwordInput").value;
+
+            if (userInput === correctPassword) {
+                document.getElementById("message").style.display = "block";
+            } else {
+                alert("Incorrect password. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>
